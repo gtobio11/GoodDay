@@ -1,0 +1,47 @@
+html{
+    background-color: #ffc1c9;
+}
+#Login_div{
+    position: absolute;
+    background-color : white;
+    display : inline-block;
+    width : 40%;
+    height : 80%;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 17%;
+    bottom: 0;
+    padding : 10px 10px 10px 10px;
+}
+.LoginBtn{
+    font-size : 16px;
+    margin-left : 20%;
+    margin-top : 3%;
+    width: 60%;
+    height : 10%;
+    border : none;
+    border-bottom: 2px solid #ff445c;
+}
+.LoginSub{
+    font-size:16px;
+    width:45%;
+    height: 10%;
+    margin-top:23%;
+    margin-left:27.5%;
+    background-color: #ff919f;
+    border:0;
+    color:#ffffff;
+    font-weight: bolder;
+    cursor: pointer;
+}
+#GoRegister{
+    text-align:center;
+    font-size:10px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#LoginTitle{
+    text-align: center;
+    font-size:26px;
+}
