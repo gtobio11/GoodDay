@@ -1,18 +1,27 @@
 html{
-    background-color: #ffc1c9;
+    width: 100%;
+    height: 100%;
+    background-image: url("../image/background.jpg");
+}
+#title {
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    font-family: 문체부 쓰기 정체;
 }
 #Login_div{
     position: absolute;
-    background-color : white;
+    background-color: hsla(0, 0%, 0%, 0.3);
     display : inline-block;
-    width : 40%;
-    height : 80%;
+    width : 35%;
+    height : 60%;
     margin: auto;
     left: 0;
     right: 0;
-    top: 17%;
+    top: 37%;
     bottom: 0;
     padding : 10px 10px 10px 10px;
+    color: #ffffff;
 }
 .LoginBtn{
     font-size : 16px;
