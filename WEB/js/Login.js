@@ -1,7 +1,7 @@
 function doLogin(){
     console.log(1);
     $.ajax({
-        url : "/account/login"
+        url : "/account/login",
         type : "POST",
         data : {
             id : $('#LoginID').val(),
@@ -21,4 +21,9 @@ $("#LoginSubmit").on('click',function(){
 });
 $("#GoRegister").on('click',function(){
     location.href="./Register.html";
+})
+$("#LoginPW").keydown(function(key) {
+    if(key.keyCode == 13){
+        doLogin();
+    }
 })
