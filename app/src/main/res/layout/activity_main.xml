@@ -64,7 +64,40 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="center"></LinearLayout>
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/status1"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp" />
+
+                        <TextView
+                            android:layout_marginTop="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/table1_title"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="30sp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:id="@+id/table1_deadline"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/table1_title"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+                </LinearLayout>
 
                 <LinearLayout
                     android:orientation="vertical"
@@ -73,7 +106,41 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="center"></LinearLayout>
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/status1"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" />
+
+                        <TextView
+                            android:layout_marginTop="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/table2_title"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="30sp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:id="@+id/table2_deadline"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/table2_title"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -92,6 +159,40 @@
                     android:layout_weight="1"
                     android:gravity="center">
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/status1"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" />
+
+                        <TextView
+                            android:layout_marginTop="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/table3_title"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="30sp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:id="@+id/table3_deadline"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/table3_title"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
+
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -102,6 +203,40 @@
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:gravity="center">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/status1"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" />
+
+                        <TextView
+                            android:layout_marginTop="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/table4_title"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="30sp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:id="@+id/table4_deadline"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/table4_title"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
 
                 </LinearLayout>
 
@@ -122,16 +257,81 @@
                     android:layout_weight="1"
                     android:gravity="center">
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/status1"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" />
+
+                        <TextView
+                            android:layout_marginTop="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/table5_title"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="30sp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:id="@+id/table5_deadline"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/table5_title"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
+
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/table6"
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:gravity="center">
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/status1"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp" />
+
+                        <TextView
+                            android:layout_marginTop="60dp"
+                            android:layout_centerHorizontal="true"
+                            android:id="@+id/table6_title"
+                            android:textAlignment="center"
+                            android:textColor="#FFFFFF"
+                            android:textSize="30sp"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:textSize="20sp"
+                            android:textColor="#FFFFFF"
+                            android:textAlignment="center"
+                            android:id="@+id/table6_deadline"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/table6_title"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content" />
+
+                    </RelativeLayout>
 
 
                 </LinearLayout>

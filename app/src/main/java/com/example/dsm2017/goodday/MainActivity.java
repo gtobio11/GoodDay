@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     ArrayAdapter yearadapter, monthadapter, dayadapter;
     Spinner yearspinner,monthspinner,dayspinner;
+    LinearLayout table1, table2, table3, table4, table5, table6;
 
 
 
@@ -36,6 +37,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        table1 = (LinearLayout) findViewById(R.id.table1);
+        table2 = (LinearLayout) findViewById(R.id.table2);
+        table3 = (LinearLayout) findViewById(R.id.table3);
+        table4 = (LinearLayout) findViewById(R.id.table4);
+        table5 = (LinearLayout) findViewById(R.id.table5);
+        table6 = (LinearLayout) findViewById(R.id.table6);
+
+        table1.setVisibility(View.INVISIBLE);
+        table2.setVisibility(View.INVISIBLE);
+        table3.setVisibility(View.INVISIBLE);
+        table4.setVisibility(View.INVISIBLE);
+        table5.setVisibility(View.INVISIBLE);
+        table6.setVisibility(View.INVISIBLE);
+
+
 
         final String[] year = {"2017년","2018년"};
 
@@ -52,8 +69,8 @@ public class MainActivity extends AppCompatActivity {
                 final Dialog dialog = new Dialog(MainActivity.this);
 
                 View write_dialog = getLayoutInflater().inflate(R.layout.dialog_write,null);
-                final EditText editText = (EditText) findViewById(R.id.write_edittext);
-                final Button wirte_ok_button = (Button) findViewById(R.id.write_ok);
+                final EditText write_title =  write_dialog.findViewById(R.id.write_edittext);
+                final Button wirte_ok_button = write_dialog.findViewById(R.id.write_ok);
 
                 dialog.setContentView(write_dialog);
                 dialog.show();
@@ -74,8 +91,9 @@ public class MainActivity extends AppCompatActivity {
                 window.setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
 
                 dialog.setCanceledOnTouchOutside(true);
+
+
             }
         });
-
     }
 }
