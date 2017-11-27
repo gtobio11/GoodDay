@@ -6,9 +6,9 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
         android:orientation="vertical">
 
         <TextView
@@ -26,51 +26,64 @@
             android:layout_height="2dp"
             android:background="#000000" />
 
-        <EditText
-            android:gravity="center"
-            android:id="@+id/write_edittext"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:hint="과제 제목을 입력해주세요." />
+            <EditText
+                android:background="@drawable/white_round_button_shape"
+                android:layout_marginTop="30dp"
+                android:id="@+id/write_edittext"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+                android:hint="과제 제목을 입력해주세요." />
 
-            <Spinner
-                android:id="@+id/yearspinner"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="60dp"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-            <Spinner
-                android:id="@+id/monthspinner"
-                android:layout_marginRight="10dp"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content" />
+                <Spinner
+                    android:id="@+id/yearspinner"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown" />
 
-            <Spinner
-                android:id="@+id/dayspinner"
-                android:layout_marginRight="10dp"
-                android:layout_width="75dp"
-                android:layout_height="wrap_content" />
-            <TextView
+                <Spinner
+                    android:id="@+id/monthspinner"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown" />
 
-                android:textSize="20sp"
+                <Spinner
+                    android:id="@+id/dayspinner"
+                    android:layout_width="75dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 까지"
+                    android:textColor="#8e8e8e"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_marginTop="30dp"
+                android:id="@+id/write_ok"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" 까지"/>
-
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/write_ok"
-            android:text="확인"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/white_round_button_shape"
+                android:text="확인"
+                android:textColor="#8e8e8e" />
     </LinearLayout>
 </LinearLayout>
