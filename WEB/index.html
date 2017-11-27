@@ -1,1 +1,51 @@
-asd
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div id="HWList" class="HWListWindow">
+        
+    </div>
+    <div id="HWPopUp">
+        <div id="HWPopUpTitle">
+        </div>
+        <div id="HWPopUpAcc">
+        </div>
+    </div>
+    <img src="./image/pencil.png" alt="과제 생성" id="HWFade">
+    <div class="HWInput fade-out" id="HWUploadWindow">
+        <div class="HWInputBox">
+            <div class="HWInputTitle">
+                과제 등록
+            </div>
+            <form method="POST" enctype="multipart/form-data" id="HWUploadForm">
+                <div class="HWInputUp">
+                    <input type="text" id="HWInputSubject" class="HWInputText" placeholder="과제 제목" name="title">
+                </div>
+                <div class="HWInputUp">
+                    <input type="text" id="HWInputContents" class="HWInputText" placeholder="과제 내용" name="contents">
+                </div>
+                <div class="HWInputUp">
+                    <input type="file" multiple="multiple" id="HWInputFiles" class="HWInputFile" name="files">
+                </div>
+                <div class="HWInputUp" id="HWInputDeadline">
+                    <span>마감일</span>
+                </div>
+                <div class="HWInputUp">
+                    <input type="submit" id="HWUploading" class="HWUploadBtn" value="등록">
+                </div>
+            </form>
+            <div class="HWInputUp"> 
+                <input type="button" id="HWFade-out" class="HWUploadBtn" value="닫기">
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

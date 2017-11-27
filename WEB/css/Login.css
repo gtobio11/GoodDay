@@ -30,8 +30,22 @@ html{
     width: 60%;
     height : 10%;
     border : none;
+    background:none;
+    color:white;
     border-bottom: 2px solid #ff445c;
 }
+/*-------------- placeholder 색상 변경---------------------*/
+    ::-webkit-input-placeholder { color: #ffffff; }
+
+    /* Firefox 4-18 */
+    :-moz-placeholder { color: #ffffff; }
+
+    /* Firefox 19+ */
+    ::-moz-placeholder { color: #ffffff; }
+
+    /* IE10+ */
+    :-ms-input-placeholder { color: #ffffff; } 
+/* -------------------------------------------------------*/
 .LoginSub{
     font-size:16px;
     width:45%;

@@ -1,0 +1,182 @@
+html{
+    background: url("../image/background.jpg")
+}
+.fade-in{
+    opacity: 1 !important;
+    display: block !important;
+}
+.fade-out{
+    opacity: 0 !important;
+    display: none !important;
+}
+#HWFade{
+    width:80px;
+    position: fixed;
+    bottom:70px;
+    right:70px;
+    cursor: pointer;
+}
+.HWInput{
+    display: inline-block;
+    position : fixed;
+    margin : auto;
+    top : 0;
+    left : 0;
+    right : 0;
+    bottom : 0;
+    background-color: hsla(0, 0%, 0%, 0.7);
+    width : 400px;
+    height: 500px;
+}
+.HWInputBox{
+    margin : 50px 50px 50px 50px;
+}
+.HWInputTitle{
+    color: #ffffff;
+    font-size: 40px;
+    text-align: center;
+    font-family: 문체부 쓰기 정체;
+    margin-bottom : 10px;
+}
+.HWInputText{
+    border:none;
+    background: none;
+    border-bottom: 2px solid #ff445c;
+    font-size : 15px;
+    padding-bottom : 10px;
+}
+.HWInputFile{
+    color:white;
+}
+.HWInputUp{
+    margin-top:30px;
+    margin-left:50px
+}
+/*-------------- placeholder 색상 변경---------------------*/
+::-webkit-input-placeholder { color: #eeeeee; }
+
+    /* Firefox 4-18 */
+    :-moz-placeholder { color: #eeeeee; }
+
+    /* Firefox 19+ */
+    ::-moz-placeholder { color: #eeeeee; }
+
+    /* IE10+ */
+    :-ms-input-placeholder { color: #eeeeee; } 
+/* -------------------------------------------------------*/
+.HWUploadBtn{
+    font-size:15px;
+    width : 195px;
+    height: 30px;
+    margin-left : -2px;
+    background-color : #ff445c;
+    border:none;
+    color:white;
+    font-weight: bold;
+    cursor: pointer;
+}
+#HWInputDeadline{
+    color:white;
+}
+.HWListWindow{
+    padding : 130px;
+}
+.HWListHurry{
+    background-color : rgba(255,6,92,0.7);
+    color:white;
+}
+.HWListNotHurry{
+    background-color : rgba(255, 193, 201, 0.7);
+    color:white;
+}
+.HWListLoad{
+    cursor: pointer;
+    display: inline-block;
+    width: 25.2%;
+    height: 200px;
+    margin-left:6.2%;
+    margin-bottom:7%;
+    text-align: center;
+}
+.HWListTitle{
+    margin-top:13%;
+    font-family: 문체부 쓰기 정체;
+    font-size:30px;
+    font-weight: bold;
+}
+.HWListContent{
+    margin-top:8%;
+    font-size: 18px;
+}
+.HWListDeadline{
+    margin-top:8%;
+}
+#HWPopUp{
+    display: inline-block;
+    position: fixed;
+    margin:auto;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    width:400px;
+    height:200px;
+    background-color: hsla(0, 0%, 0%, 0.7);
+}
+#HWPopUpTitle{
+    display: inline-block;
+    position: absolute;
+    margin:auto;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:70%;
+    height:25%;
+    color: white;
+    font-size:23px;
+    text-align: center;
+}
+.HWDownloadBtn{
+    position: absolute;
+    bottom:0;
+    right:0;
+    display: inline-block;
+    font-size:20px;
+    padding-top:1.5%;
+    padding-bottom:0.5%;
+    height: 15%;
+    width:50%;
+    text-decoration: none;
+    color:white;
+    text-align: center;
+    border-top:1px solid white;
+}
+.HWDownloadBtn2{
+    position: absolute;
+    bottom:0;
+    display: inline-block;
+    font-size:20px;
+    padding-top:1%;
+    height: 17%;
+    width:100%;
+    text-decoration: none;
+    color:white;
+    border-top:1px solid white;
+    text-align: center;
+}
+#HWPopUpClose{
+    position: absolute;
+    bottom:0;
+    display: inline-block;
+    font-size: 20px;
+    width:50%;
+    height: 19.5%;
+    border:none;
+    background-color:none;
+    color:white;
+    background-color: rgba(0,0,0,0);
+    padding:0 0 0 0 ;
+    border-top:1px solid white;
+    border-right:1px solid white;
+}
