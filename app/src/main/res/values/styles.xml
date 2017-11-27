@@ -6,6 +6,13 @@
         <item name="colorPrimary">#ffc1c9</item>
         <item name="colorPrimaryDark">#ff919f</item>
         <item name="colorAccent">#ff445c</item>
+</style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#ffc1c9</item>
+        <item name="colorPrimaryDark">#ff919f</item>
+        <item name="colorAccent">#ff445c</item>
+        <item name="android:background">@drawable/splash</item>
     </style>
 
 
