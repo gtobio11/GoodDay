@@ -257,7 +257,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-
+        
+        // 커밋하기 위한 코드
         table1_image.setOnClickListener(listener);
         table2_image.setOnClickListener(listener);
         table3_image.setOnClickListener(listener);
