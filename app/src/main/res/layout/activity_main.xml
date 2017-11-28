@@ -71,10 +71,12 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/status1"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp" />
+                            android:id="@+id/table1_image"
+                            android:layout_width="150dp"
+                            android:layout_height="150dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/status1" />
 
                         <TextView
                             android:layout_marginTop="60dp"
@@ -113,6 +115,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:id="@+id/table2_image"
                             android:layout_centerInParent="true"
                             android:src="@drawable/status1"
                             android:layout_width="150dp"
@@ -164,6 +167,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:id="@+id/table3_image"
                             android:layout_centerInParent="true"
                             android:src="@drawable/status1"
                             android:layout_width="150dp"
@@ -210,6 +214,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:id="@+id/table4_image"
                             android:layout_centerInParent="true"
                             android:src="@drawable/status1"
                             android:layout_width="150dp"
@@ -262,6 +267,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:id="@+id/table5_image"
                             android:layout_centerInParent="true"
                             android:src="@drawable/status1"
                             android:layout_width="150dp"
@@ -306,6 +312,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
+                            android:id="@+id/table6_image"
                             android:layout_centerInParent="true"
                             android:src="@drawable/status1"
                             android:layout_width="150dp"

@@ -3,6 +3,8 @@ package com.example.dsm2017.goodday;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.media.Image;
+import android.provider.ContactsContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
@@ -17,6 +19,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
@@ -39,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     String title, deadline = null;
     TextView table1_title, table1_deadline, table2_title, table2_deadline, table3_title, table3_deadline,
             table4_title, table4_deadline, table5_title, table5_deadline, table6_title, table6_deadline;
+    ImageView table1_image, table2_image, table3_image, table4_image, table5_image, table6_image;
 
 
     @Override
@@ -71,6 +75,12 @@ public class MainActivity extends AppCompatActivity {
         table6_title = (TextView) findViewById(R.id.table6_title);
         table6_deadline = (TextView) findViewById(R.id.table6_deadline);
 
+        table1_image = (ImageView) findViewById(R.id.table1_image);
+        table2_image = (ImageView) findViewById(R.id.table2_image);
+        table3_image = (ImageView) findViewById(R.id.table3_image);
+        table4_image = (ImageView) findViewById(R.id.table4_image);
+        table5_image = (ImageView) findViewById(R.id.table5_image);
+        table6_image = (ImageView) findViewById(R.id.table6_image);
 
         table1.setVisibility(View.INVISIBLE);
         table2.setVisibility(View.INVISIBLE);
@@ -122,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
-                        yearspinner.setPrompt(" ");
+                        yearspinner.setSelection(1);
                     }
                 });
 
@@ -135,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
-                        monthspinner.setPrompt(" ");
+                        monthspinner.setSelection(1);
                     }
                 });
 
@@ -148,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onNothingSelected(AdapterView<?> parent) {
-                        dayspinner.setPrompt(" ");
+                        dayspinner.setSelection(1);
                     }
                 });
 
@@ -222,5 +232,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageView.OnClickListener listener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()){
+
+                    case R.id.table1_image :
+                        break;
+
+                    case R.id.table2_image :
+                        break;
+
+                    case R.id.table3_image :
+                        break;
+
+                    case R.id.table4_image :
+                        break;
+
+                    case R.id.table5_image :
+                        break;
+
+                    case R.id.table6_image :
+                        break;
+                }
+            }
+        };
+
+        table1_image.setOnClickListener(listener);
+        table2_image.setOnClickListener(listener);
+        table3_image.setOnClickListener(listener);
+        table4_image.setOnClickListener(listener);
+        table5_image.setOnClickListener(listener);
+        table6_image.setOnClickListener(listener);
     }
 }
