@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -19,7 +20,12 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
+import static com.example.dsm2017.goodday.R.layout.design_layout_tab_icon;
 import static com.example.dsm2017.goodday.R.layout.dialog_write;
 import static com.example.dsm2017.goodday.R.layout.support_simple_spinner_dropdown_item;
 
@@ -30,7 +36,9 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter yearadapter, monthadapter, dayadapter;
     Spinner yearspinner,monthspinner,dayspinner;
     LinearLayout table1, table2, table3, table4, table5, table6;
-
+    String title, deadline = null;
+    TextView table1_title, table1_deadline, table2_title, table2_deadline, table3_title, table3_deadline,
+            table4_title, table4_deadline, table5_title, table5_deadline, table6_title, table6_deadline;
 
 
     @Override
@@ -45,13 +53,31 @@ public class MainActivity extends AppCompatActivity {
         table5 = (LinearLayout) findViewById(R.id.table5);
         table6 = (LinearLayout) findViewById(R.id.table6);
 
+        table1_title = (TextView) findViewById(R.id.table1_title);
+        table1_deadline = (TextView) findViewById(R.id.table1_deadline);
+
+        table2_title = (TextView) findViewById(R.id.table2_title);
+        table2_deadline = (TextView) findViewById(R.id.table2_deadline);
+
+        table3_title = (TextView) findViewById(R.id.table3_title);
+        table3_deadline = (TextView) findViewById(R.id.table3_deadline);
+
+        table4_title = (TextView) findViewById(R.id.table4_title);
+        table4_deadline = (TextView) findViewById(R.id.table4_deadline);
+
+        table5_title = (TextView) findViewById(R.id.table5_title);
+        table5_deadline = (TextView) findViewById(R.id.table5_deadline);
+
+        table6_title = (TextView) findViewById(R.id.table6_title);
+        table6_deadline = (TextView) findViewById(R.id.table6_deadline);
+
+
         table1.setVisibility(View.INVISIBLE);
         table2.setVisibility(View.INVISIBLE);
         table3.setVisibility(View.INVISIBLE);
         table4.setVisibility(View.INVISIBLE);
         table5.setVisibility(View.INVISIBLE);
         table6.setVisibility(View.INVISIBLE);
-
 
 
         final String[] year = {"2017년","2018년"};
@@ -70,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
                 View write_dialog = getLayoutInflater().inflate(R.layout.dialog_write,null);
                 final EditText write_title =  write_dialog.findViewById(R.id.write_edittext);
-                final Button wirte_ok_button = write_dialog.findViewById(R.id.write_ok);
+                View wirte_ok_button = write_dialog.findViewById(R.id.write_ok);
 
                 dialog.setContentView(write_dialog);
                 dialog.show();
@@ -87,13 +113,109 @@ public class MainActivity extends AppCompatActivity {
                 monthspinner.setAdapter(monthadapter);
                 dayspinner.setAdapter(dayadapter);
 
+                yearspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        yearspinner.setSelection(position);
+                        String year = yearspinner.getSelectedItem().toString();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        yearspinner.setPrompt(" ");
+                    }
+                });
+
+                monthspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        monthspinner.setSelection(position);
+                        String month = monthspinner.getSelectedItem().toString();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        monthspinner.setPrompt(" ");
+                    }
+                });
+
+                dayspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        dayspinner.setSelection(position);
+                        String day = dayspinner.getSelectedItem().toString();
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+                        dayspinner.setPrompt(" ");
+                    }
+                });
+
                 Window window = dialog.getWindow();
                 window.setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
 
                 dialog.setCanceledOnTouchOutside(true);
 
+                wirte_ok_button.setOnClickListener(new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v) {
+                        String year = yearspinner.getSelectedItem().toString();
+                        String month = monthspinner.getSelectedItem().toString();
+                        String day = dayspinner.getSelectedItem().toString();
+                        title = write_title.getText().toString();
+                        deadline = year.toString() +" "+ month.toString() +" "+day.toString();
 
+                        if(table1.getVisibility() == View.INVISIBLE) {
+                            table1_title.setText(title);
+                            table1_deadline.setText(deadline);
+                            table1.setVisibility(View.VISIBLE);
+
+                        } else if(table1.getVisibility() == View.VISIBLE){
+                            table2_title.setText(title);
+                            table2_deadline.setText(deadline);
+                            table2.setVisibility(View.VISIBLE);
+
+                        } else if(table1.getVisibility() == View.VISIBLE
+                                && table2.getVisibility() == View.VISIBLE) {
+                            table3_title.setText(title);
+                            table3_deadline.setText(deadline);
+                            table3.setVisibility(View.VISIBLE);
+
+                        } else if(table1.getVisibility() == View.VISIBLE &&
+                                table2.getVisibility() == View.VISIBLE &&
+                                table3.getVisibility() ==View.VISIBLE ){
+
+                            table4_title.setText(title);
+                            table4_deadline.setText(deadline);
+                            table4.setVisibility(View.VISIBLE);
+
+                        } else if(table1.getVisibility() == View.VISIBLE &&
+                                table2.getVisibility() == View.VISIBLE && table3.getVisibility() ==View.VISIBLE
+                                && table4.getVisibility() == View.VISIBLE) {
+                            table5_title.setText(title);
+                            table5_deadline.setText(deadline);
+                            table5.setVisibility(View.VISIBLE);
+
+                        } else if(table1.getVisibility() == View.VISIBLE &&
+                                table2.getVisibility() == View.VISIBLE && table3.getVisibility() ==View.VISIBLE
+                                && table4.getVisibility() == View.VISIBLE
+                                && table5.getVisibility() == View.VISIBLE ){
+                            table6_title.setText(title);
+                            table6_deadline.setText(deadline);
+                            table6.setVisibility(View.VISIBLE);
+
+                        } else {
+                            Toast.makeText(MainActivity.this, "더 이상 만들수 없습니다.", Toast.LENGTH_SHORT).show();
+                        }
+
+                        Toast.makeText(MainActivity.this, "과제가 등록되었습니다.", Toast.LENGTH_SHORT).show();
+
+                        dialog.cancel();
+                    }
+                });
             }
         });
+
     }
 }
