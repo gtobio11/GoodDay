@@ -166,33 +166,42 @@ public class MainActivity extends AppCompatActivity {
                         title = write_title.getText().toString();
                         deadline = year.toString() +" "+ month.toString() +" "+day.toString();
 
+                        Toast.makeText(MainActivity.this, "과제가 등록되었습니다.", Toast.LENGTH_SHORT).show();
+                        if(table6.getVisibility()==View.VISIBLE) {
+                            Toast.makeText(MainActivity.this, "더 이상 만들수 없습니다.", Toast.LENGTH_SHORT).show();
+                        }
+                        dialog.cancel();//토스트메시지
+
                         if(table1.getVisibility() == View.INVISIBLE) {
                             table1_title.setText(title);
                             table1_deadline.setText(deadline);
                             table1.setVisibility(View.VISIBLE);
-
-                        } else if(table1.getVisibility() == View.VISIBLE){
+                        } else if(table1.getVisibility() == View.VISIBLE&& table2.getVisibility() == View.INVISIBLE){
                             table2_title.setText(title);
                             table2_deadline.setText(deadline);
                             table2.setVisibility(View.VISIBLE);
 
                         } else if(table1.getVisibility() == View.VISIBLE
-                                && table2.getVisibility() == View.VISIBLE) {
+                                && table2.getVisibility() == View.VISIBLE
+                                && table3.getVisibility()==View.INVISIBLE) {
                             table3_title.setText(title);
                             table3_deadline.setText(deadline);
                             table3.setVisibility(View.VISIBLE);
 
                         } else if(table1.getVisibility() == View.VISIBLE &&
                                 table2.getVisibility() == View.VISIBLE &&
-                                table3.getVisibility() ==View.VISIBLE ){
+                                table3.getVisibility() ==View.VISIBLE &&
+                                table4.getVisibility()==View.INVISIBLE){
 
                             table4_title.setText(title);
                             table4_deadline.setText(deadline);
                             table4.setVisibility(View.VISIBLE);
 
                         } else if(table1.getVisibility() == View.VISIBLE &&
-                                table2.getVisibility() == View.VISIBLE && table3.getVisibility() ==View.VISIBLE
-                                && table4.getVisibility() == View.VISIBLE) {
+                                table2.getVisibility() == View.VISIBLE &&
+                                table3.getVisibility() ==View.VISIBLE &&
+                                table4.getVisibility() == View.VISIBLE &&
+                                table5.getVisibility()==View.INVISIBLE) {
                             table5_title.setText(title);
                             table5_deadline.setText(deadline);
                             table5.setVisibility(View.VISIBLE);
@@ -200,18 +209,14 @@ public class MainActivity extends AppCompatActivity {
                         } else if(table1.getVisibility() == View.VISIBLE &&
                                 table2.getVisibility() == View.VISIBLE && table3.getVisibility() ==View.VISIBLE
                                 && table4.getVisibility() == View.VISIBLE
-                                && table5.getVisibility() == View.VISIBLE ){
+                                && table5.getVisibility() == View.VISIBLE
+                                && table6.getVisibility()==View.INVISIBLE){
                             table6_title.setText(title);
                             table6_deadline.setText(deadline);
                             table6.setVisibility(View.VISIBLE);
 
-                        } else {
-                            Toast.makeText(MainActivity.this, "더 이상 만들수 없습니다.", Toast.LENGTH_SHORT).show();
                         }
 
-                        Toast.makeText(MainActivity.this, "과제가 등록되었습니다.", Toast.LENGTH_SHORT).show();
-
-                        dialog.cancel();
                     }
                 });
             }

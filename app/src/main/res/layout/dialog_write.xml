@@ -11,8 +11,6 @@
         android:layout_gravity="center"
         android:orientation="vertical"
         android:weightSum="15"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
         android:background="#ffffff">
 
         <LinearLayout
