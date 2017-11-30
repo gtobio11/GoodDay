@@ -234,7 +234,7 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
-
+        //status dialog
         ImageView.OnClickListener listener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
