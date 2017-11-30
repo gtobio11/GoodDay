@@ -33,16 +33,6 @@
                     android:text="과제 하기 좋은 날"
                     android:textColor="#ffffff"
                     android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="12dp"
-                    android:text="수정"
-                    android:textColor="#ffffff"
-                    android:textSize="20sp" />
             </RelativeLayout>
         </android.support.v7.widget.Toolbar>
 
