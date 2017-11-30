@@ -288,9 +288,9 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(View view) {
                             Intent intent = new Intent(MainActivity.this,TimeActivity.class);
                             startActivity(intent);
+
                             }
                         });
-
                         break;
 
                     case R.id.table2_image :
