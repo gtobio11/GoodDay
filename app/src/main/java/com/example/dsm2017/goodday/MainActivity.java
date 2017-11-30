@@ -28,6 +28,8 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+import java.util.Calendar;
+
 import static com.example.dsm2017.goodday.R.layout.design_layout_tab_icon;
 import static com.example.dsm2017.goodday.R.layout.dialog_write;
 import static com.example.dsm2017.goodday.R.layout.support_simple_spinner_dropdown_item;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton writebutton;
     Toolbar toolbar;
-    ArrayAdapter yearadapter, monthadapter, dayadapter;
+    ArrayAdapter<Integer> yearadapter, monthadapter, dayadapter;
     Spinner yearspinner,monthspinner,dayspinner;
     LinearLayout table1, table2, table3, table4, table5, table6;
     String title, deadline = null;
@@ -94,9 +96,10 @@ public class MainActivity extends AppCompatActivity {
 
         final String[] month = {"1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"};
 
-        final String[] day = {"1일","2일","3일","4일","5일","6일","7일","8일","9일","10일","11일","12일","13일",
-                              "14일","15일","16일","17일","18일","19일","20일","21일","22일","23일","24일",
-                              "25일","26일","27일","28일","29일","30일","31일"};
+        final String[] day = new String[31];
+
+        for(int i=0;i<31;i++)
+            day[i] = (i+1)+"일";
 
         writebutton = (FloatingActionButton) findViewById(R.id.writeBtn);
         writebutton.setOnClickListener(new Button.OnClickListener() {
@@ -238,6 +241,48 @@ public class MainActivity extends AppCompatActivity {
                 switch (v.getId()){
 
                     case R.id.table1_image :
+                        final Dialog dialog = new Dialog(MainActivity.this);
+                        View status_dialog = getLayoutInflater().inflate(R.layout.dialog_status,null);
+                        final TextView status_text = status_dialog.findViewById(R.id.statusText);
+                        View doNextBtn = status_dialog.findViewById(R.id.doNextBtn);
+                        View doNowBtn = status_dialog.findViewById(R.id.doNowBtn);
+
+                        //status_text색깔바꾸기
+
+                        //calender에서 날짜 꺼내오기
+                        Calendar oCalendar = Calendar.getInstance( );
+                        int year = oCalendar.get(Calendar.YEAR);
+                        int month = oCalendar.get(Calendar.MONTH);
+                        int day = oCalendar.get(Calendar.DATE);
+                        String today= year+"년"+" "+month+"월"+" "+day+"일";
+                        Toast.makeText(MainActivity.this,year+" "+month+" "+day, Toast.LENGTH_SHORT).show();
+                        //(deadline-현재날짜)/5 구간(int)설정
+
+                        //calender에서 deadline과 날짜 비교하기
+                        //구간사이에있을때 글자색상변경
+
+
+                        dialog.setContentView(status_dialog);
+                        dialog.show();
+
+                        Window window = dialog.getWindow();
+                        window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                        doNextBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog.cancel();
+                            }
+                        });
+
+                        doNowBtn.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                            Intent intent = new Intent(MainActivity.this,TimeActivity.class);
+                            startActivity(intent);
+                            }
+                        });
+
                         break;
 
                     case R.id.table2_image :
@@ -257,8 +302,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };
-        
-        // 커밋하기 위한 코드
+
         table1_image.setOnClickListener(listener);
         table2_image.setOnClickListener(listener);
         table3_image.setOnClickListener(listener);
