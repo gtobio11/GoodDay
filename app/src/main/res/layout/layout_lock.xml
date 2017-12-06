@@ -50,11 +50,13 @@
         android:gravity="center_vertical|center_horizontal">
 
         <TimePicker
+            android:id="@+id/timepicker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:timePickerMode="spinner">
         </TimePicker>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -83,6 +85,7 @@
                 android:layout_weight="1"></View>
 
             <Button
+                android:id="@+id/lock_button"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="5"

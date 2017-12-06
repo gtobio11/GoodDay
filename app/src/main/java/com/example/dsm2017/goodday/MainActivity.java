@@ -4,12 +4,15 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.media.Image;
+import android.os.Build;
 import android.provider.ContactsContract;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.support.v7.widget.Toolbar;
 import android.text.Layout;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -23,6 +26,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
     TextView table1_title, table1_deadline, table2_title, table2_deadline, table3_title, table3_deadline,
             table4_title, table4_deadline, table5_title, table5_deadline, table6_title, table6_deadline;
     ImageView table1_image, table2_image, table3_image, table4_image, table5_image, table6_image;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
                         title = write_title.getText().toString();
                         deadline = year.toString() + " " + month.toString() + " " + day.toString();
 
-                        if (title == "")
+                        if (title.equals(""))
                             Toast.makeText(MainActivity.this, "제목을 입력해주세요.", Toast.LENGTH_SHORT).show();
 
                         else {
@@ -247,11 +250,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (v.getId()){
 
                     case R.id.table1_image :
-                        final Dialog dialog = new Dialog(MainActivity.this);
-                        View status_dialog = getLayoutInflater().inflate(R.layout.dialog_status,null);
-                        final TextView status_text = status_dialog.findViewById(R.id.statusText);
-                        View doNextBtn = status_dialog.findViewById(R.id.doNextBtn);
-                        View doNowBtn = status_dialog.findViewById(R.id.doNowBtn);
+                        final Dialog dialog1 = new Dialog(MainActivity.this);
+                        View status_dialog1 = getLayoutInflater().inflate(R.layout.dialog_status,null);
+                        final TextView status_text1 = status_dialog1.findViewById(R.id.statusText);
+                        View doNextBtn = status_dialog1.findViewById(R.id.doNextBtn);
+                        View doNowBtn = status_dialog1.findViewById(R.id.doNowBtn);
 
                         //status_text색깔바꾸기
 
@@ -261,25 +264,21 @@ public class MainActivity extends AppCompatActivity {
                         int month = oCalendar.get(Calendar.MONTH);
                         int day = oCalendar.get(Calendar.DATE);
                         String today= year+"년"+" "+month+"월"+" "+day+"일";
-                        Toast.makeText(MainActivity.this,year+" "+month+" "+day, Toast.LENGTH_SHORT).show();
-                        //(deadline-현재날짜)/5 구간(int)설정
-
-                        //calender에서 deadline과 날짜 비교하기
-                        //구간사이에있을때 글자색상변경
 
 
-                        dialog.setContentView(status_dialog);
-                        dialog.show();
 
-                        Window window = dialog.getWindow();
+                        dialog1.setContentView(status_dialog1);
+                        dialog1.show();
+
+                        Window window = dialog1.getWindow();
                         window.setLayout(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
 
-                        dialog.setCanceledOnTouchOutside(false);
+                        dialog1.setCanceledOnTouchOutside(false);
 
                         doNextBtn.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                dialog.cancel();
+                                dialog1.cancel();
                             }
                         });
 
@@ -294,18 +293,193 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.table2_image :
+                        final Dialog dialog2 = new Dialog(MainActivity.this);
+                        View status_dialog2 = getLayoutInflater().inflate(R.layout.dialog_status,null);
+                        final TextView status_text2 = status_dialog2.findViewById(R.id.statusText);
+                        View doNextBtn2 = status_dialog2.findViewById(R.id.doNextBtn);
+                        View doNowBtn2 = status_dialog2.findViewById(R.id.doNowBtn);
+
+                        //status_text색깔바꾸기
+
+
+                        dialog2.setContentView(status_dialog2);
+                        dialog2.show();
+
+                        Window window2 = dialog2.getWindow();
+                        window2.setLayout(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                        dialog2.setCanceledOnTouchOutside(false);
+
+                        doNextBtn2.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog2.cancel();
+                            }
+                        });
+
+                        doNowBtn2.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(MainActivity.this,TimeActivity.class);
+                                startActivity(intent);
+
+                            }
+                        });
+
+
                         break;
 
                     case R.id.table3_image :
+                        final Dialog dialog3 = new Dialog(MainActivity.this);
+                        View status_dialog3 = getLayoutInflater().inflate(R.layout.dialog_status,null);
+                        final TextView status_text3 = status_dialog3.findViewById(R.id.statusText);
+                        View doNextBtn3 = status_dialog3.findViewById(R.id.doNextBtn);
+                        View doNowBtn3 = status_dialog3.findViewById(R.id.doNowBtn);
+
+                        //status_text색깔바꾸기
+
+
+                        dialog3.setContentView(status_dialog3);
+                        dialog3.show();
+
+                        Window window3 = dialog3.getWindow();
+                        window3.setLayout(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                        dialog3.setCanceledOnTouchOutside(false);
+
+                        doNextBtn3.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog3.cancel();
+                            }
+                        });
+
+                        doNowBtn3.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(MainActivity.this,TimeActivity.class);
+                                startActivity(intent);
+
+                            }
+                        });
+
+
+
                         break;
 
                     case R.id.table4_image :
+                        final Dialog dialog4 = new Dialog(MainActivity.this);
+                        View status_dialog4 = getLayoutInflater().inflate(R.layout.dialog_status,null);
+                        final TextView status_text4 = status_dialog4.findViewById(R.id.statusText);
+                        View doNextBtn4 = status_dialog4.findViewById(R.id.doNextBtn);
+                        View doNowBtn4 = status_dialog4.findViewById(R.id.doNowBtn);
+
+                        //status_text색깔바꾸기
+
+
+                        dialog4.setContentView(status_dialog4);
+                        dialog4.show();
+
+                        Window window4 = dialog4.getWindow();
+                        window4.setLayout(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                        dialog4.setCanceledOnTouchOutside(false);
+
+                        doNextBtn4.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog4.cancel();
+                            }
+                        });
+
+                        doNowBtn4.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(MainActivity.this,TimeActivity.class);
+                                startActivity(intent);
+
+                            }
+                        });
+
                         break;
 
                     case R.id.table5_image :
+
+                        final Dialog dialog5 = new Dialog(MainActivity.this);
+                        View status_dialog5 = getLayoutInflater().inflate(R.layout.dialog_status,null);
+                        final TextView status_text5 = status_dialog5.findViewById(R.id.statusText);
+                        View doNextBtn5 = status_dialog5.findViewById(R.id.doNextBtn);
+                        View doNowBtn5 = status_dialog5.findViewById(R.id.doNowBtn);
+
+                        //status_text색깔바꾸기
+
+
+                        dialog5.setContentView(status_dialog5);
+                        dialog5.show();
+
+                        Window window5 = dialog5.getWindow();
+                        window5.setLayout(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                        dialog5.setCanceledOnTouchOutside(false);
+
+                        doNextBtn5.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog5.cancel();
+                            }
+                        });
+
+                        doNowBtn5.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(MainActivity.this,TimeActivity.class);
+                                startActivity(intent);
+
+                            }
+                        });
+
+
+
+
                         break;
 
                     case R.id.table6_image :
+
+                        final Dialog dialog6 = new Dialog(MainActivity.this);
+                        View status_dialog6 = getLayoutInflater().inflate(R.layout.dialog_status,null);
+                        final TextView status_text6 = status_dialog6.findViewById(R.id.statusText);
+                        View doNextBtn6 = status_dialog6.findViewById(R.id.doNextBtn);
+                        View doNowBtn6 = status_dialog6.findViewById(R.id.doNowBtn);
+
+                        //status_text색깔바꾸기
+
+
+                        dialog6.setContentView(status_dialog6);
+                        dialog6.show();
+
+                        Window window6 = dialog6.getWindow();
+                        window6.setLayout(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                        dialog6.setCanceledOnTouchOutside(false);
+
+                        doNextBtn6.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                dialog6.cancel();
+                            }
+                        });
+
+                        doNowBtn6.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                Intent intent = new Intent(MainActivity.this,TimeActivity.class);
+                                startActivity(intent);
+
+                            }
+                        });
+
+
+
                         break;
                 }
             }
