@@ -1,5 +1,6 @@
 package com.example.dsm2017.goodday;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
@@ -123,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 dayspinner = (Spinner) dialog.findViewById(R.id.dayspinner);
 
                 yearadapter = new ArrayAdapter(dialog.getContext(),support_simple_spinner_dropdown_item,year);
+
                 monthadapter = new ArrayAdapter(dialog.getContext(),support_simple_spinner_dropdown_item,month);
                 dayadapter = new ArrayAdapter(dialog.getContext(),support_simple_spinner_dropdown_item,day);
 
@@ -142,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                         yearspinner.setSelection(1);
                     }
                 });
+
 
                 monthspinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
@@ -264,7 +267,7 @@ public class MainActivity extends AppCompatActivity {
                         int month = oCalendar.get(Calendar.MONTH);
                         int day = oCalendar.get(Calendar.DATE);
                         String today= year+"년"+" "+month+"월"+" "+day+"일";
-
+                        Toast.makeText(MainActivity.this, today, Toast.LENGTH_SHORT).show();
 
 
                         dialog1.setContentView(status_dialog1);
