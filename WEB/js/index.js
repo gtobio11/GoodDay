@@ -73,25 +73,24 @@ function makeHWList(data, target){
         $("#HWPopUp").toggleClass("fade-out");
         $("#HWPopUp").toggleClass("fade-in");
         var HWBtnGroup = "<a href='/download/" + data.Filenum + "' class='HWDownloadBtn'>지금 할래~</a>";
+        var HWTitle;
         if(data.hurry == 1){
-            var HWTitle = "<span id='HWPopUpDetailTitle'>아직은 여유로워~</span>";
-            var HWBtnGroup = "<a href='/download/" + data.Filenum + "' class='HWDownloadBtn2'>지금 할래~</a><button id='HWPopUpClose'>응 아니야~</button>";
+            HWTitle = "<span id='HWPopUpDetailTitle'>아직은 여유로워~</span>";
+            HWBtnGroup = "<a href='/download/" + data.Filenum + "' class='HWDownloadBtn2'>지금 할래~</a><button id='HWPopUpClose'>응 아니야~</button>";
         }
         else if(data.hurry == 2){
-            var HWTitle = "<span id='HWPopUpDetailTitle'>내일 해도 될거같아~</span>";
-            var HWBtnGroup = "<a href='/download/" + data.Filenum + "' class='HWDownloadBtn2'>지금 할래~</a><button id='HWPopUpClose'>응 아니야~</button>";
+            HWTitle = "<span id='HWPopUpDetailTitle'>내일 해도 될거같아~</span>";
+            HWBtnGroup = "<a href='/download/" + data.Filenum + "' class='HWDownloadBtn2'>지금 할래~</a><button id='HWPopUpClose'>응 아니야~</button>";
         }
         else if(data.hurry == 3){
-            var HWTitle = "<span id='HWPopUpDetailTitle'>오늘 하는게 좋을것 같아~</span>";
-            var HWBtnGroup = "<a href='/download/" + data.Filenum + "' class='HWDownloadBtn2'>지금 할래~</a><button id='HWPopUpClose'>응 아니야~</button>";
+            HWTitle = "<span id='HWPopUpDetailTitle'>오늘 하는게 좋을것 같아~</span>";
+            HWBtnGroup = "<a href='/download/" + data.Filenum + "' class='HWDownloadBtn2'>지금 할래~</a><button id='HWPopUpClose'>응 아니야~</button>";
         }
         else if(data.hurry == 4){
-            var HWTitle = "<span id='HWPopUpDetailTitle'>오늘 무조건 해야되 !</span>";
-            var HWBtnGroup = "<a href='/download/" + data.Filenum + "' class='HWDownloadBtn'>지금 할래~</a>";
+            HWTitle = "<span id='HWPopUpDetailTitle'>오늘 무조건 해야되 !</span>";
         }
         else if(data.hurry == 5){
-            var HWTitle = "<span id='HWPopUpDetailTitle'>창밖으로 떨어져 ~</span>"
-            var HWBtnGroup = "<a href='/download/" + data.Filenum + "' class='HWDownloadBtn'>지금 할래~</a>";
+            HWTitle = "<span id='HWPopUpDetailTitle'>창밖으로 떨어져 ~</span>"
         }
         $("#HWPopUpTitle").append(HWTitle);
         $("#HWPopUpAcc").append(HWBtnGroup);
