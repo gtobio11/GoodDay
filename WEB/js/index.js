@@ -95,7 +95,7 @@ function makeHWList(data, target){
         $("#HWPopUpTitle").append(HWTitle);
         $("#HWPopUpAcc").append(HWBtnGroup);
     })
-    $("#HWListTitle").append(newCard);
+    $("#HWList").append(newCard);
 }
 $("#HWPopUpClose").on("click",function(){
     $("#HWPopUp").toggleClass("fade-out");
